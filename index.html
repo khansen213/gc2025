@@ -161,28 +161,27 @@
   /* Optional: rules card footer layout */
   .card-footer{ margin-top:12px; padding-top:12px; border-top:1px dashed rgba(255,255,255,.25); }
 </style>
-<script src="quest-hud.min.js" defer></script>
 </head>
 <body>
-<div class="warp" id="warp" aria-hidden="true"></div>
-
-<main id="scroller" tabindex="-1" aria-label="General Conference Originals single-page flow">
-  <!-- 0: ACCESS GATE -->
-  <section id="sec-gate" aria-labelledby="h-gate">
-    <div class="card gate-wrap" role="dialog" aria-modal="true" aria-describedby="d-gate">
-      <div class="icons" aria-hidden="true">🛸 🌌 🧙‍♂️</div>
-      <h1 id="h-gate">Enter Access Code</h1>
-      <p id="d-gate">Please enter your 4-digit access code. Codes are provided by the organizer. If you’ve already submitted, you’ll see a lockout message.</p>
-      <input id="code" class="input code" inputmode="numeric" autocomplete="one-time-code" maxlength="4" placeholder="____" aria-label="4-digit access code" />
-      <div id="gate-msg" class="muted" role="status" aria-live="polite"></div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <button id="btn-enter">Unlock</button>
-        <button id="btn-clear" class="secondary" title="Clear local access flag">Reset Local Access</button>
+  <div class="warp" id="warp" aria-hidden="true"></div>
+  
+  <main id="scroller" tabindex="-1" aria-label="General Conference Originals single-page flow">
+    <!-- 0: ACCESS GATE -->
+    <section id="sec-gate" aria-labelledby="h-gate">
+      <div class="card gate-wrap" role="dialog" aria-modal="true" aria-describedby="d-gate">
+        <div class="icons" aria-hidden="true">🛸 🌌 🧙‍♂️</div>
+        <h1 id="h-gate">Enter Access Code</h1>
+        <p id="d-gate">Please enter your 4-digit access code. Codes are provided by the organizer. If you’ve already submitted, you’ll see a lockout message.</p>
+        <input id="code" class="input code" inputmode="numeric" autocomplete="one-time-code" maxlength="4" placeholder="____" aria-label="4-digit access code" />
+        <div id="gate-msg" class="muted" role="status" aria-live="polite"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button id="btn-enter">Unlock</button>
+          <button id="btn-clear" class="secondary" title="Clear local access flag">Reset Local Access</button>
+        </div>
+        <div class="navhint">Tip: Press Enter to submit.</div>
       </div>
-      <div class="navhint">Tip: Press Enter to submit.</div>
-    </div>
-  </section>
-
+    </section>
+    
   <!-- 1: INTRO -->
   <section id="sec-intro" aria-labelledby="h-intro">
     <div class="card">
@@ -206,7 +205,7 @@
       <div class="navhint">Scroll / Arrow keys move section-by-section (snap). Up/down moves immediately.</div>
     </div>
   </section>
-
+  
   <!-- 2: WHAT -->
   <section id="sec-what" aria-labelledby="h-what">
     <div class="card">
@@ -223,13 +222,13 @@
       </ul>
     </div>
   </section>
-
+  
   <!-- 3: RULES & SCOREBOARD (GATED) -->
   <section id="sec-rules" aria-labelledby="h-rules">
     <div id="rules-card" class="card" role="region" aria-label="Rules and scoreboard">
       <div class="icons" aria-hidden="true">📜 🔥</div>
       <h2 id="h-rules">Rules & Scoreboard (Read to Continue)</h2>
-
+      
       <div class="tbl-title plus">Benefits (green +)</div>
       <table role="table" aria-label="Benefits table">
         <thead>
@@ -248,7 +247,7 @@
           <tr role="row"><td role="cell"><strong>Completion bonus</strong></td><td role="cell">+30 baseline; or +30 plus +5 per full 10 penalty up to +40</td><td role="cell" class="num plus">+30 → +40</td></tr>
         </tbody>
       </table>
-
+      
       <div class="tbl-title minus">Penalties (red −)</div>
       <table role="table" aria-label="Penalties table">
         <thead>
@@ -268,7 +267,7 @@
         </tbody>
       </table>
       <p class="note">Tie-breakers: Tic-Tac-Toe, then Rock-Paper-Scissors. Prize hint: possible reward for highest finisher who completes all five.</p>
-
+      
       <div style="margin-top:12px;display:flex;align-items:center;gap:10px">
         <input id="rules-ok" type="checkbox" />
         <label for="rules-ok"><strong>I read and understand the rules.</strong></label>
@@ -276,7 +275,7 @@
       <div class="navhint">You <strong>cannot</strong> scroll down past this section until you check the box above.</div>
     </div>
   </section>
-
+  
   <!-- 4: ACTIVITIES OVERVIEW -->
   <section id="sec-overview" aria-labelledby="h-overview">
     <div class="card">
@@ -292,14 +291,14 @@
       <p class="muted">Next, place exactly five items (one per session) in the lineup, with exactly one Notes mode, and either Maze or Sudoku.</p>
     </div>
   </section>
-
+  
   <!-- 5: ORDER GRID (DnD) -->
   <section id="sec-grid" aria-labelledby="h-grid">
     <div class="card" role="region" aria-label="Order grid with drag-and-drop and keyboard controls">
       <div class="icons" aria-hidden="true">🧩 🧙‍♂️</div>
       <h2 id="h-grid">Choose Your Five — Drag, Drop, or Use Keyboard</h2>
       <p class="muted">Keyboard: Focus a palette item → <strong>Alt+1..5</strong> to send to a session. On slots: <strong>Alt+←/→</strong> to swap, <strong>Delete</strong> to remove.</p>
-
+      
       <div class="palette" id="palette" aria-label="Palette">
         <!-- Items are pills; id carries type & variant -->
         <div class="pill" tabindex="0" draggable="true" data-type="wordSearch" id="item-ws">Word Search <small class="badge">Originality</small></div>
@@ -311,7 +310,7 @@
         <div class="pill" tabindex="0" draggable="true" data-type="sudoku" id="item-sudoku">Sudoku</div>
         <div class="pill" tabindex="0" draggable="true" data-type="freebie" id="item-freebie">Freebie</div>
       </div>
-
+      
       <div style="margin:14px 0 6px;font-weight:700">Lineup (Sessions 1–5)</div>
       <div class="slots" id="slots" aria-label="Five session slots">
         <div class="slot" tabindex="0" data-index="0" aria-label="Session 1"><div class="slabel">Session 1</div><div class="inside"></div></div>
@@ -320,21 +319,21 @@
         <div class="slot" tabindex="0" data-index="3" aria-label="Session 4"><div class="slabel">Session 4</div><div class="inside"></div></div>
         <div class="slot" tabindex="0" data-index="4" aria-label="Session 5"><div class="slabel">Session 5</div><div class="inside"></div></div>
       </div>
-
+      
       <div id="dnd-aria" class="muted" role="status" aria-live="polite" style="margin-top:10px"></div>
       <div id="constraint-msg" class="bad" role="alert" style="margin-top:6px"></div>
     </div>
   </section>
-
+  
   <!-- 6: DETAILS (conditional) -->
   <section id="sec-details" aria-labelledby="h-details">
     <div class="card">
       <div class="icons" aria-hidden="true">✍️ 🧩</div>
       <h2 id="h-details">Details for Your Chosen Items</h2>
       <p class="muted">Only panels for selected items appear. Ensure required fields are filled.</p>
-
+      
       <div class="grid" id="details-panels">
-
+        
         <!-- Word Search -->
         <div class="panel" id="panel-ws" hidden>
           <h3>Word Search</h3>
@@ -370,7 +369,7 @@
             <div id="ws-bank" class="bank" aria-label="Word bank inputs"></div>
           </div>
         </div>
-
+        
         <!-- Crossword -->
         <div class="panel" id="panel-cw" hidden>
           <h3>Crossword</h3>
@@ -399,21 +398,21 @@
           </div>
           <div class="note">Grid is pre-made. Originality depends on theme, clue style, and counts.</div>
         </div>
-
+        
         <!-- Notes -->
         <div class="panel" id="panel-notes" hidden>
           <h3>Notes — <span id="notes-mode">Mode</span></h3>
           <label for="notes-plan">Plan</label>
           <textarea id="notes-plan" class="input" rows="4" placeholder="What will you take notes on / draw / color? How will you keep it neat?"></textarea>
         </div>
-
+        
         <!-- Freebie -->
         <div class="panel" id="panel-freebie" hidden>
           <h3>Freebie</h3>
           <label for="freebie-desc">Description</label>
           <textarea id="freebie-desc" class="input" rows="3" placeholder="Describe your craft or few-of-something."></textarea>
         </div>
-
+        
         <!-- Puzzle (Maze/Sudoku) -->
         <div class="panel" id="panel-puzzle" hidden>
           <h3 id="puzzle-title">Puzzle</h3>
@@ -423,11 +422,11 @@
             <option>Easy</option><option>Medium</option><option>Hard</option>
           </select>
         </div>
-
+        
       </div>
     </div>
   </section>
-
+  
   <!-- 7: SUBMIT / PRINT -->
   <section id="sec-submit" aria-labelledby="h-submit">
     <div class="card">
@@ -475,48 +474,49 @@
   </div>
 </div>
 
+<script src="quest-hud.min.js"></script>
 <script>
-/*** ===== CONFIG / ACCESS CODES ===== ***/
-const ACCESS_CODES = ["1734","4375","2025","0001"]; // /^\d{4}$/
-const ADMIN_PIN   = "4317"; // admin-only reset PIN
-
-/*** ===== STATE ===== ***/
-const state = {
-  user:{ alias:'', firstName:'', initial:'' },
-  order:[null,null,null,null,null], // Session 1..5
-  details:{
-    wordSearch:{ difficulty:'', bank:Array(16).fill(''), final:[] },
-    crossword:{ theme:'', across:'', down:'', difficulty:'' },
-    notes:{ mode:'', plan:'' }, // 'Note-Taking'|'Drawing'|'Coloring'
-    freebie:{ desc:'' },
-    puzzle:{ type:'', difficulty:'' } // 'Maze'|'Sudoku' or 'Maze & Sudoku' label on panel
-  },
-  meta:{ submittedAt:null, locked:false },
-};
-
-const KEYS = {
-  ACCESS_OK_CODE:'gc_access_ok_code',     // last valid code used to unlock
-  ACCESS_OK:'gc_access_ok',               // legacy flag (kept for compatibility)
-  LOCKED_CODES:'gc_locked_codes',         // JSON array of codes that have submitted (locked)
-  LOCKED_AT_MAP:'gc_locked_at_map',       // JSON map: code -> timestamp
-  RULES_ACK:'gc_rules_ack',               // persisted rules checkbox
-  PROGRESS:'gc_progress_made'             // "any field was edited" marker
-};
-
-/*** ===== CORE REFS ===== ***/
-const scroller = document.getElementById('scroller');
-let sections = Array.from(scroller.querySelectorAll('section'));
-const warp = document.getElementById('warp');
-
-let currentIndex = 0;
-
-/*** ===== RUNTIME STYLES (ensure) ===== ***/
-(function ensureRuntimeStyles(){
-  const id = 'runtime-helper-style';
-  if(!document.getElementById(id)){
-    const s = document.createElement('style');
-    s.id = id;
-    s.textContent = `
+  /*** ===== CONFIG / ACCESS CODES ===== ***/
+  const ACCESS_CODES = ["1734","4375","2025","0001"]; // /^\d{4}$/
+  const ADMIN_PIN   = "4317"; // admin-only reset PIN
+  
+  /*** ===== STATE ===== ***/
+  const state = {
+    user:{ alias:'', firstName:'', initial:'' },
+    order:[null,null,null,null,null], // Session 1..5
+    details:{
+      wordSearch:{ difficulty:'', bank:Array(16).fill(''), final:[] },
+      crossword:{ theme:'', across:'', down:'', difficulty:'' },
+      notes:{ mode:'', plan:'' }, // 'Note-Taking'|'Drawing'|'Coloring'
+      freebie:{ desc:'' },
+      puzzle:{ type:'', difficulty:'' } // 'Maze'|'Sudoku' or 'Maze & Sudoku' label on panel
+    },
+    meta:{ submittedAt:null, locked:false },
+  };
+  
+  const KEYS = {
+    ACCESS_OK_CODE:'gc_access_ok_code',     // last valid code used to unlock
+    ACCESS_OK:'gc_access_ok',               // legacy flag (kept for compatibility)
+    LOCKED_CODES:'gc_locked_codes',         // JSON array of codes that have submitted (locked)
+    LOCKED_AT_MAP:'gc_locked_at_map',       // JSON map: code -> timestamp
+    RULES_ACK:'gc_rules_ack',               // persisted rules checkbox
+    PROGRESS:'gc_progress_made'             // "any field was edited" marker
+  };
+  
+  /*** ===== CORE REFS ===== ***/
+  const scroller = document.getElementById('scroller');
+  let sections = Array.from(scroller.querySelectorAll('section'));
+  const warp = document.getElementById('warp');
+  
+  let currentIndex = 0;
+  
+  /*** ===== RUNTIME STYLES (ensure) ===== ***/
+  (function ensureRuntimeStyles(){
+    const id = 'runtime-helper-style';
+    if(!document.getElementById(id)){
+      const s = document.createElement('style');
+      s.id = id;
+      s.textContent = `
       .invalid{ border-color:#FF3B30 !important; box-shadow:0 0 0 2px rgba(255,59,48,.35) !important; }
       .field-hint{ font-size:12px; color:#FF3B30; margin-top:6px; }
       .locked-scroll-freeze{ overflow:hidden !important; height:100vh !important; }

@@ -1,0 +1,97 @@
+<section id="instructions" aria-labelledby="instructions-heading">
+  <div class="instructions-inner">
+    <details>
+      <summary class="instructions-summary" id="instructions-heading">Instructions (under construction)</summary>
+      <div class="instructions-body">
+        <!-- BEGIN: original instructions content (unchanged text; now with IDs) -->
+        <p>
+          Hello and welcome to the online packet of October 2025! This year’s packet is a little different — I wanted to keep things simple for myself and even more fun for you. Instead of a long list of activities, you get to design your own experience!
+        </p>
+
+        <h2 id="how-to-participate">How to Participate</h2>
+        <p>
+          Think of five activities you want to do during General Conference. These don’t have to be from this packet — you can come up with your own ideas! Take a minute or two to brainstorm, then write them down on a piece of paper.
+        </p>
+
+        <h3 id="four-aspects">The Four Aspects of Goal-Making</h3>
+        <p>Your activities should cover these four areas:</p>
+        <ul>
+          <li><strong>Social</strong>: Something you do with or for others.</li>
+          <li><strong>Physical</strong>: Something active or movement-based.</li>
+          <li><strong>Spiritual</strong>: Something that helps you connect spiritually.</li>
+          <li><strong>Intellectual</strong>: Something that challenges your mind.</li>
+        </ul>
+        <p>For a fifth activity, add a <strong>Creative</strong> goal — anything that lets you express yourself!</p>
+
+        <h3 id="directions">Directions</h3>
+        <p>
+          On your paper, write down one activity for each category: social, physical, spiritual, intellectual, and creative. Make sure your activities are <strong>SMART</strong> (Specific, Measurable, Achievable, Relevant, and Time-bound). Be creative and have fun — this isn’t a chore!
+        </p>
+
+        <h3 id="examples">Examples</h3>
+        <ul>
+          <li><strong>Spiritual:</strong> Stay vigilant in listening to General Conference.</li>
+          <li><strong>Intellectual:</strong> Invent a silly riddle or joke and share it at dinner.</li>
+          <li><strong>Social:</strong> Make up a handshake or secret wave with a sibling or friend.</li>
+          <li><strong>Physical:</strong> Have a mini dance party to your favorite upbeat song.</li>
+          <li><strong>Creative:</strong> Write a story about how much you love someone else.</li>
+        </ul>
+
+        <h2 id="originality">Originality is Rewarding!</h2>
+        <p>
+          If no one else has your goal or activity, you get a bonus! Activities you do with others are allowed, but you must add your own original twist. Everyone keeps track of their own activities and points using the provided scoreboard. When you finish, be ready to show what you’ve done!
+        </p>
+
+        <h3 id="helpful-links">Helpful Links</h3>
+        <ul>
+          <li>Word Search Creator: <a href="https://thewordsearch.com/maker" target="_blank">thewordsearch.com/maker</a></li>
+          <li>Maze Generator: <a href="https://www.mazegenerator.net" target="_blank">mazegenerator.net</a></li>
+          <li>Crossword Generator: <a href="https://puzzleme.amuselabs.com/" target="_blank">puzzleme.amuselabs.com</a></li>
+          <li>Sudoku Generator: <a href="https://puzzleme.amuselabs.com/" target="_blank">puzzleme.amuselabs.com</a></li>
+        </ul>
+
+        <h2 id="how-points-work">How Points Work</h2>
+        <ol>
+          <li>
+            <strong>Base Points (10 per goal):</strong>
+            <ul>
+              <li>For every activity you choose, you earn 5 points (up to five activities).</li>
+              <li>For every activity you complete, you earn 10 points.</li>
+              <li>Example: If you finish 5 activities, you get 50 points.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Fun Bonus (+5):</strong>
+            <ul><li>If one of your activities made me laugh or smile, you may add 5 points to your score.</li></ul>
+          </li>
+          <li>
+            <strong>Originality Bonus (+5):</strong>
+            <ul><li>If you wrote down and completed an activity that no one else in the group wrote in the same category, you earn 5 extra points.</li></ul>
+          </li>
+        </ol>
+
+        <h3 id="adding-up-points">Adding Up Points</h3>
+        <ul>
+          <li>At the end, everyone adds up their points.</li>
+          <li>Most players will likely have a similar score.</li>
+          <li>That means more than one person may have the same final total.</li>
+        </ul>
+
+        <h2 id="choosing-the-winner">Choosing the Winner</h2>
+        <ol>
+          <li>If there is one winner, they win outright and get $10.</li>
+          <li>If there is a tie:
+            <ul>
+              <li>All players with at least 50 points write their name on a slip of paper.</li>
+              <li>All names go into a hat; four are drawn at random.</li>
+              <li>Those four play rock, paper, scissors (best of three).</li>
+              <li>The winners then play a card game of their choice; the final winner gets $10.</li>
+            </ul>
+          </li>
+        </ol>
+        <p>Remember: The more original and fun your activities, the better your chances! Good luck, and enjoy General Conference!</p>
+        <!-- END: original instructions content -->
+      </div>
+    </details>
+  </div>
+</section>

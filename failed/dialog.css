@@ -1,0 +1,117 @@
+/* dialog.css — UI for Dialog System, HP bar, emoji FX, and delta badges */
+/* Updated: raise dialog z-index above page nav buttons so the dialog overlays them. */
+
+:root{
+  --dlg-bg: rgba(10, 6, 20, .72);
+  --dlg-border: rgba(255,255,255,.14);
+  --dlg-text: #F7F5FF;
+  --dlg-accent: #FFD74A;
+  --dlg-accent-2: #9C5BFF;
+  --hp-bg: rgba(0,0,0,.35);
+  --hp-border: rgba(255,255,255,.18);
+  --hp-shadow: 0 6px 18px rgba(0,0,0,.35);
+  --good:#2FBF71; --bad:#FF3B30;
+  --hint:#cfc7ff;
+  --ring: 3px;
+}
+
+/* ---------- HP Bar (top-right) ---------- */
+#hp-hud{
+  position:fixed; right:14px; top:14px; z-index:60;
+  display:flex; align-items:center; gap:10px;
+  background:var(--hp-bg); border:2px solid var(--hp-border);
+  border-radius:999px; padding:8px 12px; color:var(--dlg-text);
+  box-shadow:var(--hp-shadow); backdrop-filter: blur(6px);
+  user-select:none;
+}
+#hp-hud .emoji{ font-size:20px; line-height:1; display:inline-flex; align-items:center; }
+#hp-hud .emoji[data-emoji="true"]{ cursor:pointer; }
+#hp-hud .hpnum{ font-weight:900; font-variant-numeric: tabular-nums; padding:0 2px; }
+#hp-hud .sep{ opacity:.6; }
+#hp-replay{
+  appearance:none; background:var(--dlg-accent); color:#111;
+  border:0; border-radius:999px; font-weight:800;
+  padding:6px 10px; cursor:pointer;
+}
+#hp-replay:focus{ outline: var(--ring) solid var(--dlg-accent); outline-offset: 2px; }
+
+/* Emphasis wave */
+#hp-hud.wave-dragon   .dragon{ animation: hp-pulse .28s ease; }
+#hp-hud.wave-scroll   .scroll{ animation: hp-pulse .28s ease; }
+#hp-hud.wave-flash    { animation: hp-flash .38s ease; }
+@keyframes hp-pulse   { 0%{transform:scale(1)} 50%{transform:scale(1.18)} 100%{transform:scale(1)} }
+@keyframes hp-flash   { 0%{box-shadow:0 0 0 0 rgba(255,215,74,.0)} 30%{box-shadow:0 0 0 6px rgba(255,215,74,.35)} 100%{box-shadow:var(--hp-shadow)} }
+
+/* Delta badges near HP number */
+.hp-delta{
+  position:fixed; right:16px; top:50px; z-index:65;
+  font-weight:900; font-variant-numeric: tabular-nums;
+  padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.2);
+  background:#1b1330; color:#fff;
+  pointer-events:none;
+  animation: delta-fade .85s ease forwards;
+}
+.hp-delta.add{ color:var(--good); }
+.hp-delta.sub{ color:var(--bad); }
+@keyframes delta-fade{
+  0%{ opacity:0; transform: translateY(-6px); }
+  10%{ opacity:1; transform: translateY(0); }
+  80%{ opacity:1; }
+  100%{ opacity:0; transform: translateY(-14px); }
+}
+
+/* ---------- Dialog Overlay ---------- */
+/* Raised z-index above nav rail (which is 90) so dialog hides page buttons. */
+#dlg-backdrop{
+  position:fixed; inset:0; z-index:120; /* was 80 */
+  display:none; place-items:end center;
+  background: rgba(0,0,0,.45);
+}
+#dlg-backdrop.show{ display:grid; animation: fade-in .18s ease; }
+@keyframes fade-in{ from{opacity:0} to{opacity:1} }
+
+#dlg-box{
+  width:min(1000px, 92vw); margin: 18px;
+  background:var(--dlg-bg); border:2px solid var(--dlg-border);
+  border-radius:16px; padding:14px 16px;
+  color:var(--dlg-text);
+  box-shadow: 0 12px 28px rgba(0,0,0,.45);
+}
+#dlg-row{ display:flex; gap:12px; align-items:flex-start; }
+#dlg-emoji{
+  font-size:28px; line-height:1;
+}
+#dlg-emoji.speaking{ animation: bob 700ms ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes bob{ 0%,100%{transform: translateY(0)} 50%{transform: translateY(-4px)} }
+
+#dlg-text{
+  flex:1; min-height:2.1em;
+  font-size:16px; line-height:1.5;
+}
+#dlg-advance{
+  align-self:center;
+  appearance:none; background:var(--dlg-accent);
+  color:#111; border:0; border-radius:12px; padding:10px 12px;
+  font-weight:800; cursor:pointer;
+}
+#dlg-advance:focus{ outline: var(--ring) solid var(--dlg-accent); outline-offset:2px; }
+
+#dlg-hint{ margin-top:6px; font-size:12px; color:var(--hint); }
+
+/* ---------- Emoji micro-animations ---------- */
+[data-emoji="true"].popshake{
+  animation: pop-shake .28s ease;
+}
+@keyframes pop-shake{
+  0%{ transform: scale(1) }
+  30%{ transform: scale(1.18) }
+  55%{ transform: scale(1) rotate(-4deg) }
+  80%{ transform: scale(1) rotate(3deg) }
+  100%{ transform: scale(1) rotate(0deg) }
+}
+
+/* Avoid animating numbers */
+.hpnum{ pointer-events:none; }
+
+/* Focus ring utility (if needed) */
+.dlg-focus:focus{ outline: var(--ring) solid var(--dlg-accent-2); outline-offset: 2px; }
